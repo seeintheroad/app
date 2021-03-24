@@ -1,0 +1,25 @@
+server:
+  port: 7005
+  servlet:
+    context-path: /feign
+spring:
+  application:
+    name: feign
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 10000 #连接另一个服务的时间 默认为60s
+        readTimeout: 60000 #另一个服务反应的时间 该设置控制报错Read timed out,但网关中的配置链接超时时间,建议该值小于网关超时时间
+  hystrix:
+   enabled: true  #用于开启服务降级
+#eureka:
+#  instance:
+#    prefer-ip-address: true #显示ip地址 让该服务使用IP注册到注册中心，而不是hostname
+#  client:
+#    serviceUrl:
+#      defaultZone: http://127.0.0.1:7001/eureka/
