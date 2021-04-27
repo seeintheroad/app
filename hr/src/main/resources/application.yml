@@ -9,9 +9,6 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-#eureka:
-#  instance:
-#    prefer-ip-address: true #显示ip地址 让该服务使用IP注册到注册中心，而不是hostname
-#  client:
-#    serviceUrl:
+knife4j:
+  enable: true
 #      defaultZone: http://127.0.0.1:7001/eureka/

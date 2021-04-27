@@ -1,5 +1,7 @@
 package mobile.app.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import mobile.app.entity.TestEntity;
 import net.minidev.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -8,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
-
+@Api("测试模块")
 @RestController
 public class TestController {
     @RequestMapping("/test")
@@ -16,6 +18,7 @@ public class TestController {
         return "test";
     }
 
+    @ApiOperation("testMap")
     @RequestMapping("/testMap")
     public String testMap(@RequestParam("code") String param1, @RequestParam("code1") String param2) {
         System.out.println(param1);
