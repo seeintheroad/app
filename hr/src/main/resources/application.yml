@@ -10,5 +10,5 @@ spring:
       discovery:
         server-addr: 127.0.0.1:8848
 knife4j:
-  enable: true
+  enable: true #开启knife4j增强功能
 #      defaultZone: http://127.0.0.1:7001/eureka/

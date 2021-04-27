@@ -1,5 +1,6 @@
 package mobile.app.controller;
 
+import com.github.xiaoymin.knife4j.annotations.ApiOperationSupport;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import mobile.app.entity.TestEntity;
@@ -43,8 +44,17 @@ public class TestController {
         return JSONObject.toJSONString(map);
     }
 
+    @ApiOperation("testMap4")
     @RequestMapping("/testMap4")
+    @ApiOperationSupport(includeParameters = {"code"})
     public String testMap4(@RequestBody TestEntity testEntity) {
+        System.out.println(testEntity);
+        return "map";
+    }
+    @ApiOperation("testMap5")
+    @RequestMapping("/testMap5")
+    @ApiOperationSupport(ignoreParameters = {"code1"})
+    public String testMap5(@RequestBody TestEntity testEntity) {
         System.out.println(testEntity);
         return "map";
     }
